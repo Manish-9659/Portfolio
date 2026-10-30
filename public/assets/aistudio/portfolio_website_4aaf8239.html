@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manish SR | Frontend Developer & AI App Builder</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            900: '#064e3b',
+                            950: '#022c22',
+                        },
+                        dark: {
+                            bg: '#090d16',
+                            card: '#111827',
+                            border: '#1f2937'
+                        }
+                    },
+                    boxShadow: {
+                        'emerald-glow': '0 0 20px -3px rgba(16, 185, 129, 0.3)',
+                        'emerald-glow-lg': '0 0 35px -5px rgba(16, 185, 129, 0.45)',
+                        'emerald-pill': '0 0 10px rgba(16, 185, 129, 0.25)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom Glowing Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090d16;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #10b98133;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #10b981;
+        }
+        .emerald-gradient-text {
+            background: linear-gradient(135deg, #a7f3d0 0%, #10b981 50%, #059669 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .emerald-glass {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(16, 185, 129, 0.15);
+        }
+        .emerald-glass:hover {
+            border-color: rgba(16, 185, 129, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-slate-100 transition-colors duration-300 antialiased min-h-screen selection:bg-emerald-500 selection:text-black">
+
+    <!-- Ambient Background Radial Emerald Glows -->
+    <div class="fixed top-0 left-1/4 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+    <div class="fixed bottom-0 right-1/4 w-[500px] h-[500px] bg-emerald-600/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 w-full border-b border-slate-800/80 bg-dark-bg/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center group-hover:border-emerald-400 group-hover:shadow-emerald-glow transition-all">
+                    <span class="font-bold text-emerald-400 text-sm">M</span>
+                </div>
+                <span class="font-bold text-lg tracking-tight text-white group-hover:text-emerald-400 transition-colors">Manish SR</span>
+            </a>
+
+            <!-- Nav Links -->
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-emerald-400 transition-colors">About</a>
+                <a href="#experience" class="hover:text-emerald-400 transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-emerald-400 transition-colors">Projects</a>
+                <a href="#skills" class="hover:text-emerald-400 transition-colors">Skills</a>
+                <a href="#education" class="hover:text-emerald-400 transition-colors">Education</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-3">
+                <a href="#contact" class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition-all shadow-emerald-glow hover:shadow-emerald-glow-lg flex items-center gap-2">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                    <span>Contact Me</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-20">
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="pt-6 pb-10 flex flex-col items-start gap-6">
+            <!-- Status Pill -->
+            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-xs font-medium bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 shadow-emerald-pill">
+                <span class="relative flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                </span>
+                <span>Available for Opportunities & Projects</span>
+            </div>
+
+            <!-- Main Heading -->
+            <div class="space-y-3 max-w-3xl">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    Hi, I'm <span class="emerald-gradient-text">Manish SR</span>
+                </h1>
+                <p class="text-xl sm:text-2xl font-medium text-slate-300">
+                    Computer Science Engineer | Frontend Developer & AI App Builder
+                </p>
+                <p class="text-sm sm:text-base text-slate-400 flex items-center gap-2 pt-1">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-emerald-400"></i>
+                    Thuckalay, Tamil Nadu, India
+                </p>
+            </div>
+
+            <!-- Brief Pitch -->
+            <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
+                Specializing in architecting high-performance web applications, REST API integrations, and intelligent AI-driven data interfaces.
+            </p>
+
+            <!-- CTA Buttons & Social Links -->
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+                <a href="#projects" class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold shadow-emerald-glow hover:shadow-emerald-glow-lg transition-all flex items-center gap-2">
+                    <i data-lucide="code" class="w-5 h-5"></i>
+                    <span>Explore Projects</span>
+                </a>
+                <a href="mailto:manish20sree@gmail.com" class="px-6 py-3 rounded-xl bg-slate-900 border border-slate-700 hover:border-emerald-500/50 text-slate-200 font-semibold hover:text-emerald-400 transition-all flex items-center gap-2 group">
+                    <i data-lucide="mail" class="w-5 h-5 text-emerald-400 group-hover:scale-110 transition-transform"></i>
+                    <span>Send Email</span>
+                </a>
+                <button onclick="copyToClipboard('manish20sree@gmail.com', this)" class="p-3 rounded-xl bg-slate-900 border border-slate-700 hover:border-emerald-500/50 text-slate-300 hover:text-emerald-400 transition-all" title="Copy Email">
+                    <i data-lucide="copy" class="w-5 h-5"></i>
+                </button>
+                <a href="https://linkedin.com/in/manish-s-r-a62b942a" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-slate-900 border border-slate-700 hover:border-emerald-500/50 text-slate-300 hover:text-emerald-400 transition-all" title="LinkedIn Profile">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+                <a href="https://github.com/manish20sree" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-slate-900 border border-slate-700 hover:border-emerald-500/50 text-slate-300 hover:text-emerald-400 transition-all" title="GitHub Profile">
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- ABOUT / SUMMARY SECTION -->
+        <section id="about" class="space-y-4">
+            <div class="flex items-center gap-3">
+                <div class="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                    <i data-lucide="user" class="w-5 h-5"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-white">Professional Summary</h2>
+            </div>
+            
+            <div class="emerald-glass p-6 sm:p-8 rounded-2xl shadow-xl">
+                <p class="text-slate-300 leading-relaxed text-base sm:text-lg">
+                    Computer Science Engineering undergraduate with hands-on experience in frontend development, REST API integration, and AI-driven data applications. Proficient in <span class="text-emerald-400 font-medium">Python, JavaScript, HTML, CSS, and React</span>, with a proven track record of architecting responsive web interfaces and data workflows. Adept at cross-functional collaboration and translating technical requirements into scalable solutions.
+                </p>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6 pt-6 border-t border-slate-800">
+                    <div>
+                        <p class="text-xs text-slate-500 uppercase tracking-wider">Degree</p>
+                        <p class="text-sm font-semibold text-slate-200 mt-1">B.E. Computer Science</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-500 uppercase tracking-wider">Primary Stack</p>
+                        <p class="text-sm font-semibold text-emerald-400 mt-1">React / JS / Python</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-500 uppercase tracking-wider">Focus</p>
+                        <p class="text-sm font-semibold text-slate-200 mt-1">AI Applications & APIs</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-500 uppercase tracking-wider">Status</p>
+                        <p class="text-sm font-semibold text-emerald-400 mt-1">Ready for Hire</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience" class="space-y-6">
+            <div class="flex items-center gap-3">
+                <div class="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                    <i data-lucide="briefcase" class="w-5 h-5"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-white">Work Experience</h2>
+            </div>
+
+            <!-- Timeline Card -->
+            <div class="relative border-l-2 border-emerald-500/30 ml-4 pl-6 sm:pl-8 space-y-8">
+                <div class="relative group">
+                    <!-- Glowing Dot -->
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-emerald-500 border-4 border-dark-bg group-hover:scale-125 transition-transform shadow-emerald-glow"></div>
+
+                    <div class="emerald-glass p-6 sm:p-8 rounded-2xl space-y-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800/80 pb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">AI & Data Science Intern</h3>
+                                <p class="text-emerald-400 font-medium">Femtosoft Technologies</p>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-emerald-300 w-fit">
+                                <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+                                June 2026 – July 2026
+                            </span>
+                        </div>
+
+                        <ul class="space-y-3 text-slate-300 text-sm sm:text-base">
+                            <li class="flex items-start gap-3">
+                                <span class="p-1 rounded-full bg-emerald-500/20 text-emerald-400 mt-1 shrink-0">
+                                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                                </span>
+                                <span>Applied AI and data methodologies to analyze complex datasets, accelerating team data workflow efficiency by <strong class="text-emerald-400 font-semibold">25%</strong>.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="p-1 rounded-full bg-emerald-500/20 text-emerald-400 mt-1 shrink-0">
+                                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                                </span>
+                                <span>Designed and engineered a comprehensive Supply Chain Logistics Dashboard featuring delivery delay prediction models to visualize critical metrics and mitigate bottlenecks.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="p-1 rounded-full bg-emerald-500/20 text-emerald-400 mt-1 shrink-0">
+                                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                                </span>
+                                <span>Spearheaded data-focused features involving statistical analysis, real-time visualization, and predictive pipelines to enhance decision-making.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED PROJECTS SECTION -->
+        <section id="projects" class="space-y-6">
+            <div class="flex items-center gap-3">
+                <div class="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                    <i data-lucide="folder-git-2" class="w-5 h-5"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-white">Featured Projects</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="emerald-glass p-6 rounded-2xl flex flex-col justify-between group hover:shadow-emerald-glow transition-all duration-300 hover:-translate-y-1">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <a href="https://github.com/manish20sree" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-black transition-all" title="View GitHub Profile">
+                                <i data-lucide="github" class="w-6 h-6"></i>
+                            </a>
+                            <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 border border-slate-700">REST API</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">GitHub Profile Analyzer</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Engineered a fully responsive web application processing user profiles to dynamically present repositories, followers, stars, and forks using GitHub REST API and async/await with robust error handling.
+                        </p>
+                    </div>
+
+                    <div class="pt-6 space-y-4">
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-300">JavaScript</span>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-300">Fetch API</span>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-300">HTML5/CSS3</span>
+                        </div>
+                        <div class="pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs text-emerald-400">
+                            <span>UI Efficiency: +30%</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="emerald-glass p-6 rounded-2xl flex flex-col justify-between group hover:shadow-emerald-glow transition-all duration-300 hover:-translate-y-1">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-black transition-all">
+                                <i data-lucide="film" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 border border-slate-700">Web Platform</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">Movie Finder Website</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Developed a responsive movie discovery platform integrating external movie databases for real-time content retrieval and interactive filtering. Streamlined search using asynchronous JavaScript algorithms.
+                        </p>
+                    </div>
+
+                    <div class="pt-6 space-y-4">
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-300">DOM Manipulation</span>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-300">Async JS</span>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-300">TMDB API</span>
+                        </div>
+                        <div class="pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs text-emerald-400">
+                            <span>Low Search Latency</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="emerald-glass p-6 rounded-2xl flex flex-col justify-between group hover:shadow-emerald-glow transition-all duration-300 hover:-translate-y-1">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-black transition-all">
+                                <i data-lucide="sprout" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-emerald-900/50 text-emerald-300 border border-emerald-600/50">AI & Mobile</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">AgriNova 360° Smart Agri App</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Architecting an AI-driven agricultural platform leveraging modular React components to support precision farming with crop recommendation, weather forecasting, pest detection, and soil monitoring.
+                        </p>
+                    </div>
+
+                    <div class="pt-6 space-y-4">
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-300">React</span>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-300">AI Pipelines</span>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-300">Precision Agri</span>
+                        </div>
+                        <div class="pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs text-emerald-400">
+                            <span>Modular Architecture</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS MATRIX SECTION -->
+        <section id="skills" class="space-y-6">
+            <div class="flex items-center gap-3">
+                <div class="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                    <i data-lucide="cpu" class="w-5 h-5"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-white">Technical Expertise</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Category 1 -->
+                <div class="emerald-glass p-6 rounded-2xl space-y-4">
+                    <h3 class="text-base font-bold text-white flex items-center gap-2">
+                        <i data-lucide="code-2" class="w-4 h-4 text-emerald-400"></i>
+                        Programming Languages
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-emerald-500/30 text-slate-200 text-sm font-medium hover:border-emerald-400 transition-colors">Python</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-emerald-500/30 text-slate-200 text-sm font-medium hover:border-emerald-400 transition-colors">JavaScript</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-emerald-500/30 text-slate-200 text-sm font-medium hover:border-emerald-400 transition-colors">HTML5</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-emerald-500/30 text-slate-200 text-sm font-medium hover:border-emerald-400 transition-colors">CSS3</span>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="emerald-glass p-6 rounded-2xl space-y-4">
+                    <h3 class="text-base font-bold text-white flex items-center gap-2">
+                        <i data-lucide="layout" class="w-4 h-4 text-emerald-400"></i>
+                        Web Development
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-emerald-500/30 text-slate-200 text-sm font-medium hover:border-emerald-400 transition-colors">React</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-emerald-500/30 text-slate-200 text-sm font-medium hover:border-emerald-400 transition-colors">Responsive UI</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-emerald-500/30 text-slate-200 text-sm font-medium hover:border-emerald-400 transition-colors">DOM Manipulation</span>
+                    </div>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="emerald-glass p-6 rounded-2xl space-y-4">
+                    <h3 class="text-base font-bold text-white flex items-center gap-2">
+                        <i data-lucide="network" class="w-4 h-4 text-emerald-400"></i>
+                        APIs & Integration
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-emerald-500/30 text-slate-200 text-sm font-medium hover:border-emerald-400 transition-colors">REST APIs</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-emerald-500/30 text-slate-200 text-sm font-medium hover:border-emerald-400 transition-colors">Fetch API</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-emerald-500/30 text-slate-200 text-sm font-medium hover:border-emerald-400 transition-colors">Async / Await</span>
+                    </div>
+                </div>
+
+                <!-- Category 4 -->
+                <div class="emerald-glass p-6 rounded-2xl space-y-4">
+                    <h3 class="text-base font-bold text-white flex items-center gap-2">
+                        <i data-lucide="wrench" class="w-4 h-4 text-emerald-400"></i>
+                        Tools & Software
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-emerald-500/30 text-slate-200 text-sm font-medium hover:border-emerald-400 transition-colors">Git</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-emerald-500/30 text-slate-200 text-sm font-medium hover:border-emerald-400 transition-colors">GitHub</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-emerald-500/30 text-slate-200 text-sm font-medium hover:border-emerald-400 transition-colors">Canva</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-emerald-500/30 text-slate-200 text-sm font-medium hover:border-emerald-400 transition-colors">DaVinci Resolve</span>
+                    </div>
+                </div>
+
+                <!-- Category 5 -->
+                <div class="emerald-glass p-6 rounded-2xl space-y-4 sm:col-span-2 lg:col-span-2">
+                    <h3 class="text-base font-bold text-white flex items-center gap-2">
+                        <i data-lucide="brain" class="w-4 h-4 text-emerald-400"></i>
+                        Methodologies & Core
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-emerald-500/30 text-slate-200 text-sm font-medium hover:border-emerald-400 transition-colors">Agile Methodologies</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-emerald-500/30 text-slate-200 text-sm font-medium hover:border-emerald-400 transition-colors">Artificial Intelligence Fundamentals</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-emerald-500/30 text-slate-200 text-sm font-medium hover:border-emerald-400 transition-colors">Data Analysis</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION & CERTIFICATIONS SECTION -->
+        <section id="education" class="space-y-6">
+            <div class="flex items-center gap-3">
+                <div class="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                    <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-white">Education & Certifications</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Education Card -->
+                <div class="emerald-glass p-6 sm:p-8 rounded-2xl space-y-4">
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="book-open" class="w-5 h-5 text-emerald-400"></i>
+                        <h3 class="text-lg font-bold text-white">Education History</h3>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="border-l-2 border-emerald-500/40 pl-4 py-1 space-y-1">
+                            <p class="font-bold text-slate-100">B.E. Computer Science & Engineering</p>
+                            <p class="text-xs text-slate-400">University College of Engineering Nagercoil (Anna University)</p>
+                            <p class="text-xs text-emerald-400 font-medium pt-1">GPA: 7.3 / 10.0 (up to 6th Semester)</p>
+                        </div>
+
+                        <div class="border-l-2 border-slate-700 pl-4 py-1 space-y-1">
+                            <p class="font-semibold text-slate-200 text-sm">HSC (Higher Secondary Education)</p>
+                            <p class="text-xs text-slate-400">Sir CP Memorial Government Higher Secondary School (2022–2023)</p>
+                            <p class="text-xs text-slate-300">Score: 74%</p>
+                        </div>
+
+                        <div class="border-l-2 border-slate-700 pl-4 py-1 space-y-1">
+                            <p class="font-semibold text-slate-200 text-sm">SSLC (Secondary Education)</p>
+                            <p class="text-xs text-slate-400">Amala Matric Higher Secondary School (2020–2021)</p>
+                            <p class="text-xs text-emerald-400 font-medium">Score: 100%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications Card -->
+                <div class="emerald-glass p-6 sm:p-8 rounded-2xl space-y-4">
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="award" class="w-5 h-5 text-emerald-400"></i>
+                        <h3 class="text-lg font-bold text-white">Certifications & Training</h3>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
+                            <p class="text-sm font-bold text-slate-200 flex items-center gap-2">
+                                <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+                                Ignite Bootcamp
+                            </p>
+                            <p class="text-xs text-slate-400 pl-6">Artificial Intelligence & Ethical AI</p>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
+                            <p class="text-sm font-bold text-slate-200 flex items-center gap-2">
+                                <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+                                Infosys Springboard
+                            </p>
+                            <p class="text-xs text-slate-400 pl-6">Continuous Integration and Delivery (CI/CD) - DevOps</p>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
+                            <p class="text-sm font-bold text-slate-200 flex items-center gap-2">
+                                <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+                                Infosys Springboard
+                            </p>
+                            <p class="text-xs text-slate-400 pl-6">Basics of Business Communication | Agile Methodology</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT & FOOTER SECTION -->
+        <section id="contact" class="pt-8 space-y-8 border-t border-slate-800/80">
+            <div class="emerald-glass p-8 sm:p-12 rounded-3xl text-center space-y-6 relative overflow-hidden">
+                <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-48 h-48 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="space-y-3 max-w-xl mx-auto">
+                    <h2 class="text-3xl font-extrabold text-white">Let's Build Something Great</h2>
+                    <p class="text-slate-300 text-sm sm:text-base">
+                        Have an opportunity, a project request, or a collaboration in mind? Feel free to reach out directly.
+                    </p>
+                </div>
+
+                <!-- Quick Contact Options -->
+                <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+                    <a href="mailto:manish20sree@gmail.com" class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold shadow-emerald-glow hover:shadow-emerald-glow-lg transition-all flex items-center gap-2">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                        <span>manish20sree@gmail.com</span>
+                    </a>
+                    <a href="tel:+917418541749" class="px-6 py-3 rounded-xl bg-slate-900 border border-slate-700 hover:border-emerald-500/50 text-slate-200 font-semibold hover:text-emerald-400 transition-all flex items-center gap-2">
+                        <i data-lucide="phone" class="w-5 h-5 text-emerald-400"></i>
+                        <span>+91 7418541749</span>
+                    </a>
+                </div>
+
+                <!-- Social Handles -->
+                <div class="flex items-center justify-center gap-6 pt-4">
+                    <a href="mailto:manish20sree@gmail.com" class="text-slate-400 hover:text-emerald-400 transition-colors flex items-center gap-1.5 text-sm font-medium">
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        <span>manish20sree@gmail.com</span>
+                    </a>
+                    <a href="https://linkedin.com/in/manish-s-r-a62b942a" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-emerald-400 transition-colors flex items-center gap-1.5 text-sm font-medium">
+                        <i data-lucide="linkedin" class="w-4 h-4"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/manish20sree" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-emerald-400 transition-colors flex items-center gap-1.5 text-sm font-medium">
+                        <i data-lucide="github" class="w-4 h-4"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer Bar -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 pb-8">
+                <p>© 2026 Manish SR. Built with Next-Gen Speed & Emerald Accent styling.</p>
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="hover:text-emerald-400 transition-colors flex items-center gap-1">
+                    <span>Back to Top</span>
+                    <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 px-4 py-3 rounded-xl bg-emerald-500 text-slate-950 font-bold shadow-emerald-glow-lg translate-y-24 opacity-0 transition-all duration-300 flex items-center gap-2 pointer-events-none z-50">
+        <i data-lucide="check-circle" class="w-5 h-5"></i>
+        <span id="toast-msg">Copied to clipboard!</span>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Clipboard Copy Helper
+        function copyToClipboard(text, btnElement) {
+            // Native clipboard API fallback for iframe compatibility
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text);
+            } else {
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                textArea.style.position = "fixed";
+                textArea.style.left = "-999999px";
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                } catch (error) {
+                    console.error('Fallback copy failed', error);
+                }
+                document.body.removeChild(textArea);
+            }
+
+            showToast("Copied email address!");
+        }
+
+        // Custom Toast Function
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            toastMsg.innerText = message;
+
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
